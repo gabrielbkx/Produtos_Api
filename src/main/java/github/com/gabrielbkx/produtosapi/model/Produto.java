@@ -10,7 +10,7 @@ public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "codigo")
+    @Column(name = "id")
     private String id;
 
     @Column(name = "nome")
@@ -23,12 +23,18 @@ public class Produto implements Serializable {
     @Column(name = "preco")
     private Double preco;
 
+
+
     public Produto(String id, Double preco, String descricao, String nome) {
         this.id = id;
         this.preco = preco;
         this.descricao = descricao;
         this.nome = nome;
     }
+
+    public Produto() {
+    }
+
 
     public String getId() {
         return id;
