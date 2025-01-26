@@ -1,17 +1,26 @@
 package github.com.gabrielbkx.produtosapi.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
+@Entity
+@Table(name = "produto")
 public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "codigo")
     private String id;
+
+    @Column(name = "nome")
     private String nome;
+
+
+    @Column(name = "decricao")
     private String descricao;
+
+    @Column(name = "preco")
     private Double preco;
 
     public Produto(String id, Double preco, String descricao, String nome) {
